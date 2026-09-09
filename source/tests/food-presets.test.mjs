@@ -7,7 +7,7 @@ test('replacement meals are within 10% of kaprao calories and distinguish their 
  const base=food('kaprao-chicken-pork');
  assert.equal(base.values.calories,859);
  assert.equal(base.values.fat,34.4);
- for(const id of ['water-pork','water-chicken','kebab-pork','kebab-chicken']){
+ for(const id of ['kebab-pork','kebab-chicken']){
   const p=food(id);assert(Math.abs(p.values.calories/base.values.calories-1)<0.1);
   assert(p.values.fat<base.values.fat);assert(validateMeals({lunch:presetMeal(p,1)}));
  }
@@ -27,4 +27,11 @@ test('raw egg whites and fixed single-portion oats remain distinct',()=>{
  assert.deepEqual(food('egg-whites-100g').values,{calories:52,protein:10.9,carbs:0.7,fat:0.2});
  assert.throws(()=>presetMeal(food('oats-less-carb'),2));
  assert.equal(foodPresets.filter(f=>f.id.startsWith('oats')).length,1);
+});
+
+test('water meals exclude eggs; smoothie scales the complete recipe',()=>{
+ assert.equal(food('water-pork').values.calories,620);assert.equal(food('water-chicken').values.calories,600);
+ for(const id of ['water-pork','water-chicken'])assert(!food(id).name.includes('ไข่'));
+ const smoothie=presetMeal(food('fruit-meiji-r1-smoothie'),1);assert.deepEqual([smoothie.calories,smoothie.protein,smoothie.carbs,smoothie.fat],[646,91.4,48.9,9.5]);
+ assert.equal(presetMeal(food('fruit-meiji-r1-smoothie'),0.5).calories,323);assert(validateMeals({snack:smoothie}));
 });

@@ -26,12 +26,12 @@ const nutritionSources=[
 const sauceNote='เผื่อซอส 15 g = 30 kcal, P 0 / C 6 / F 0.7 g และผัก 50 g = 10 kcal เป็นสมมติฐานสำหรับจัดมื้อ ไม่ใช่ฉลากพันท้ายหรือค่าที่ชั่งจริง';
 function waterMeal(kind:'pork'|'chicken'):FoodPreset{
  const name=kind==='pork'?'หมูสันใน':'อกไก่';
- return {id:'water-'+kind,name:name+'ผัดน้ำ + ข้าว + ไข่ต้ม 2 ฟอง',unit:'มื้อ',tag:'มื้อทดแทนกะเพรา',
- ingredients:[name+' 250 g ชั่งก่อนปรุง','น้ำสำหรับผัด ไม่เติมน้ำมัน','ข้าวสวยสุก 200 g','ไข่ต้มเบอร์ 0 จำนวน 2 ฟอง (เนื้อไข่รวมประมาณ 130 g)','ผักประมาณ 50 g','น้ำจิ้มสุกี้พันท้ายนรสิงห์ประมาณ 15 g'],
- method:'ผัดเนื้อด้วยน้ำจนสุก เสิร์ฟกับข้าว ไข่ต้ม และน้ำจิ้ม สูตรนี้รวมไข่ 2 ฟองในยอดแล้ว ไม่ต้องกดเพิ่มไข่ซ้ำ '+sauceNote,
- estimate:'จัดทั้งมื้อให้แคลอรีใกล้กะเพรา รวมข้าวและไข่ 2 ฟองแล้ว โปรตีนมากกว่าและไขมันน้อยกว่า จึงไม่ใช่สารอาหารเท่ากันทุกช่อง ซอสใช้ค่าเผื่อ 30 kcal',
- logNote:'เนื้อดิบ 250 g + ข้าวสุก 200 g + ไข่ต้ม 2 ฟอง รวมแล้ว; ซอส 15 g ประมาณ',sources:nutritionSources,
- values:recipeValues([[kind==='pork'?pork:chicken,250],[rice,200],[egg,130],[vegetables,50],[sauce,15]])};
+ return {id:'water-'+kind,name:name+'ผัดน้ำ + ข้าว',unit:'มื้อ',tag:'มื้อหลัก',
+ ingredients:[name+' 250 g ชั่งก่อนปรุง','น้ำสำหรับผัด ไม่เติมน้ำมัน','ข้าวสวยสุก 200 g','ผักประมาณ 50 g','น้ำจิ้มสุกี้พันท้ายนรสิงห์ประมาณ 15 g'],
+ method:'ผัดเนื้อด้วยน้ำจนสุก เสิร์ฟกับข้าวและน้ำจิ้ม ไม่รวมไข่ต้ม หากกินไข่ด้วยให้เลือกเมนูไข่ต้มแล้วกด “เพิ่มในมื้อนี้” '+sauceNote,
+ estimate:'รวมเนื้อดิบ 250 g และข้าวสุก 200 g ไม่รวมไข่ต้ม เลือกเพิ่มไข่จากเมนูแยกได้ ซอสใช้ค่าเผื่อ 30 kcal',
+ logNote:'เนื้อดิบ 250 g + ข้าวสุก 200 g; ไม่รวมไข่ต้ม; ซอส 15 g ประมาณ',sources:nutritionSources,
+ values:recipeValues([[kind==='pork'?pork:chicken,250],[rice,200],[vegetables,50],[sauce,15]])};
 }
 function kebabMeal(kind:'pork'|'chicken'):FoodPreset{
  const name=kind==='pork'?'หมูสันใน':'อกไก่';
@@ -53,6 +53,14 @@ export const foodPresets:FoodPreset[]=[
  values:recipeValues([[chicken,250],[belly,50],[rice,200],[vegetables,50],[sauce,15]])},
  ...(['pork','chicken'] as const).map(kind=>waterMeal(kind)),
  ...(['pork','chicken'] as const).map(kind=>kebabMeal(kind)),
+
+ {id:'fruit-meiji-r1-smoothie',name:'ผลไม้ปั่น + Meiji UP + R1 ช็อกโกแลต',unit:'สูตรเต็ม',tag:'เครื่องดื่ม',
+ ingredients:['สตรอเบอร์รีแช่แข็ง + ผลไม้รวมแช่แข็ง รวมทั้งหมด 250 g ไม่เติมน้ำตาล','นม Meiji UP รสจืดตามภาพ 300 g','R1 Protein / Whey Isolate Chocolate Fudge 3 scoop (อ้างอิง scoop ละ 32 g)','น้ำหรือน้ำแข็งตามชอบ ไม่เติมน้ำเชื่อม'],
+ method:'ปั่นส่วนผสมทั้งหมดเข้าด้วยกัน ยอดนี้นับทั้งสูตร หากแบ่งดื่มครึ่งหนึ่งเลือก 0.5 สูตร สมมติสตรอเบอร์รี 125 g + ผลไม้รวม 125 g; ผลไม้รวมใช้ค่าเผื่อ 50 kcal / P 0.7 / C 12 / F 0.3 g ต่อ 100 g เพราะยังไม่ทราบชนิดและสัดส่วนจริง นม 300 g ประมาณเป็น 300 ml เพื่อเทียบฉลาก จึงมีความคลาดเคลื่อนเล็กน้อย',
+ estimate:'ประมาณ 646 kcal ทั้งสูตร · ผลไม้รวม 250 g + นม 300 g + เวย์ 3 scoop ใช้ R1 Isolate โปรตีน 25 g ต่อ scoop ตามที่ยืนยัน ค่าผลไม้เป็นสมมติฐานและควรเทียบฉลากเวย์ที่ใช้อยู่',
+ logNote:'ต่อสูตรเต็ม: ผลไม้รวม 250 g; Meiji UP 300 g; R1 Isolate 3 scoop; สัดส่วนผลไม้ประมาณ',
+ sources:[{title:'ฉลาก Meiji UP 200 ml จากผู้ผลิต',url:'https://www.cpmeiji.com/en/product/view/Meiji-Up-Plain-Milk-200ml'},{title:'R1 Isolate Chocolate Fudge · ฉลากอ้างอิง',url:'https://www.dolphinfitness.co.uk/en/rule1-r1-protein-76-servings/98463/chocolate-fudge'},{title:'USDA · สตรอเบอร์รีแช่แข็งไม่เติมน้ำตาล',url:'https://www.nutrifacts.info/foods/168173/strawberries-frozen-unsweetened-includes-foods-for-usda-s-food-distribution-program'}],
+ values:recipeValues([[{calories:35,protein:0.43,carbs:9.13,fat:0.11},125],[{calories:50,protein:0.7,carbs:12,fat:0.3},125],[{calories:60,protein:5,carbs:4.5,fat:2.5},300],[{calories:375,protein:78.125,carbs:9.375,fat:1.5625},96]])},
  {id:'boiled-egg-0',name:'ไข่ต้ม เบอร์ 0',unit:'ฟอง',tag:'เพิ่มในมื้อ',
  ingredients:['ไข่ไก่เบอร์ 0 จำนวน 1 ฟอง','สมมติเนื้อไข่ต้มหลังแกะเปลือก 65 g'],method:'ต้มให้สุก แกะเปลือก ไม่เติมน้ำมัน หากชั่งเนื้อไข่ได้ต่างจาก 65 g ให้ปรับจำนวนส่วนตามน้ำหนักจริง ÷ 65',
  estimate:'ประมาณ 101 kcal ต่อฟอง คิดจากส่วนที่กินได้ 65 g ไม่ใช่น้ำหนักรวมเปลือก ขนาดเบอร์ 0 ไม่ได้กำหนดน้ำหนักเนื้อไข่แน่นอน',
@@ -66,5 +74,5 @@ export const foodPresets:FoodPreset[]=[
 export function presetMeal(food:FoodPreset,portions:number):Meal{
  if(food.fixedPortions&&portions!==food.fixedPortions)throw new Error('สูตรนี้ใช้ครั้งละ 1 กล่อง');
  if(!Number.isFinite(portions)||portions<=0||portions>10)throw new Error('ระบุจำนวนส่วนมากกว่า 0 ถึง 10');
- return {...Object.fromEntries(Object.entries(food.values).map(([key,value])=>[key,value===null?null:Math.round(value*portions*10)/10])),note:`${food.name} × ${portions} ${food.unit} (ประมาณจากสูตร)${food.logNote?'; '+food.logNote:''}`.slice(0,300)} as Meal;
+ return {...Object.fromEntries(Object.entries(food.values).map(([key,value])=>[key,value===null?null:Math.round(value*portions*10)/10])),note:`${food.name} × ${portions} ${food.unit} (ประมาณจากสูตร)${food.logNote?'; ฐานสูตร 1 ส่วน: '+food.logNote:''}`.slice(0,300)} as Meal;
 }
