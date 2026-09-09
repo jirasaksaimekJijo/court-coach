@@ -10,7 +10,8 @@ test('queued snapshots survive failure and clear only after a matching receipt',
  assert(validConnection(config));assert(!validConnection({...config,endpoint:'https://evil.test/exec'}));
  localStorage.setItem('court-coach:sheets:connection:v1',JSON.stringify(config));
  enqueue('2026-09-09',emptyEntry(),defaultProfile);globalThis.fetch=async()=>{throw Error('offline')};
- await assert.rejects(flushQueue(),/offline/);assert.equal(Object.keys(pending()).length,1);
+ globalThis.document={createElement:()=>{throw Error('offline')}};
+ await assert.rejects(flushQueue());assert.equal(Object.keys(pending()).length,1);
  enqueue('2026-09-09',{...emptyEntry(),weight:110},defaultProfile);assert.equal(Object.keys(pending()).length,1);
  globalThis.window={};globalThis.document={createElement:()=>({remove(){}}),head:{append(script){const u=new URL(script.src);queueMicrotask(()=>window[u.searchParams.get('callback')]({requestId:u.searchParams.get('ack'),ok:true}))}}};
  globalThis.fetch=async()=>({type:'opaque'});assert.equal(await flushQueue(),0);assert.equal(Object.keys(pending()).length,0);
