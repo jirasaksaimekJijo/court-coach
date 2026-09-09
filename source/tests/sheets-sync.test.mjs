@@ -1,0 +1,30 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
+import {emptyEntry,defaultProfile} from '../lib/coach.ts';
+import {enqueue,pending,flushQueue,validConnection,syncEndpoint} from '../lib/sheets-sync.ts';
+test('queued snapshots survive failure and clear only after a matching receipt',async()=>{
+ const values=new Map();globalThis.localStorage={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v)};
+ const config={endpoint:syncEndpoint,token:'a'.repeat(64)};
+ assert(validConnection(config));assert(!validConnection({...config,endpoint:'https://evil.test/exec'}));
+ localStorage.setItem('court-coach:sheets:connection:v1',JSON.stringify(config));
+ enqueue('2026-09-09',emptyEntry(),defaultProfile);globalThis.fetch=async()=>{throw Error('offline')};
+ await assert.rejects(flushQueue(),/offline/);assert.equal(Object.keys(pending()).length,1);
+ enqueue('2026-09-09',{...emptyEntry(),weight:110},defaultProfile);assert.equal(Object.keys(pending()).length,1);
+ globalThis.window={};globalThis.document={createElement:()=>({remove(){}}),head:{append(script){const u=new URL(script.src);queueMicrotask(()=>window[u.searchParams.get('callback')]({requestId:u.searchParams.get('ack'),ok:true}))}}};
+ globalThis.fetch=async()=>({type:'opaque'});assert.equal(await flushQueue(),0);assert.equal(Object.keys(pending()).length,0);
+});
+test('server authenticates, upserts complete daily data, and protects formulas',()=>{
+ const rows=[],receipts=new Map();let maxCols=26;
+ const chain={setFontWeight(){return this},setBackground(){return this},setFontColor(){return this},setWrap(){return this},setNumberFormat(){return this}};
+ const sheet={getMaxColumns:()=>maxCols,insertColumnsAfter:(_,n)=>{maxCols+=n},getLastRow:()=>rows.length,setFrozenRows(){},setColumnWidths(){},setColumnWidth(){},getMaxRows:()=>1000,getRange(r,c,n=1,m=1){return {...chain,setValues(data){data.forEach((a,i)=>{rows[r-1+i]??=[];a.forEach((v,j)=>rows[r-1+i][c-1+j]=v)});return chain},getDisplayValues:()=>rows.slice(r-1,r-1+n).map(row=>row.slice(c-1,c-1+m).map(String))}}};
+ const ctx={PropertiesService:{getScriptProperties:()=>({getProperty:()=> 'a'.repeat(64)})},LockService:{getScriptLock:()=>({waitLock(){},releaseLock(){}})},SpreadsheetApp:{openById:()=>({getSheetByName:()=>sheet}),flush(){}},CacheService:{getScriptCache:()=>({put:(k,v)=>receipts.set(k,JSON.parse(v))})},ContentService:{createTextOutput:()=>({})}};
+ vm.createContext(ctx);vm.runInContext(readFileSync(new URL('../sheets-backend.gs',import.meta.url),'utf8'),ctx);
+ const payload={token:'a'.repeat(64),date:'2026-09-09',requestId:crypto.randomUUID(),updatedAt:'2026-09-09T10:00:00.000Z',entry:{...emptyEntry(),notes:'=IMPORTXML("bad")'},profile:defaultProfile};
+ const send=d=>ctx.doPost({postData:{contents:JSON.stringify(d)}});
+ send({...payload,token:'bad'});assert.equal(rows.length,0);
+ send(payload);assert.equal(rows.length,2);assert.equal(rows[1][18],"'=IMPORTXML(\"bad\")");assert.deepEqual(JSON.parse(rows[1].at(-1)),payload.entry);assert(receipts.get('ack:'+payload.requestId).ok);
+ send({...payload,requestId:crypto.randomUUID(),entry:{...payload.entry,weight:109}});assert.equal(rows.length,2);assert.equal(rows[1][4],109);
+ const older={...payload,requestId:crypto.randomUUID(),updatedAt:'2026-09-08T10:00:00.000Z'};send(older);assert.equal(rows[1][4],109);assert.equal(receipts.get('ack:'+older.requestId).ok,false);
+});
