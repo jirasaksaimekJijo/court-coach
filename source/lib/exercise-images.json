@@ -96,12 +96,11 @@
     "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dumbbell_Scaption.json"
   },
   "carry": {
-    "name": "Farmer's Walk",
+    "name": "Dumbbell farmer hold",
     "images": [
-      "./exercises/carry-0.jpg",
-      "./exercises/carry-1.jpg"
+      "./exercises/farmer-hold.svg"
     ],
-    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Farmers_Walk.json"
+    "source": "https://www.acefitness.org/resources/everyone/exercise-library/359/farmer-s-carry/"
   },
   "sideplank": {
     "name": "Side Bridge",

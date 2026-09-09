@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="430" viewBox="0 0 640 430" role="img" aria-label="Standing still with a dumbbell at each side, arms straight and feet hip-width apart">
+<rect width="640" height="430" rx="20" fill="#eef3eb"/>
+<text x="320" y="42" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#174c42">DUMBBELL FARMER HOLD</text>
+<path d="M200 381H440" stroke="#b0c2b7" stroke-width="3"/>
+<circle cx="320" cy="102" r="30" fill="#dbaf90"/>
+<path d="M292 139 Q320 127 348 139 L351 249 H289Z" fill="#174c42"/>
+<path d="M292 148L271 191L263 257 M348 148L369 191L377 257" fill="none" stroke="#dbaf90" stroke-width="19" stroke-linecap="round"/>
+<path d="M305 250L302 363 M335 250L340 363" stroke="#405765" stroke-width="26" stroke-linecap="round"/>
+<path d="M302 368H280 M340 368H360" stroke="#233d36" stroke-width="18" stroke-linecap="round"/>
+<g stroke="#334c46" stroke-width="9"><path d="M239 259H287M353 259H401"/></g>
+<g fill="#334c46"><rect x="234" y="239" width="15" height="40" rx="4"/><rect x="278" y="239" width="15" height="40" rx="4"/><rect x="347" y="239" width="15" height="40" rx="4"/><rect x="391" y="239" width="15" height="40" rx="4"/></g>
+<text x="320" y="414" text-anchor="middle" font-family="sans-serif" font-size="19" fill="#174c42">Stand still · 20–30 seconds · Breathe normally</text>
+</svg>

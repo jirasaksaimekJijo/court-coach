@@ -4,6 +4,10 @@ export type Meal={calories:number|null;protein:number|null;carbs:number|null;fat
 export type Meals=Partial<Record<MealKey,Meal>>;
 export const nutrients=['calories','protein','carbs','fat'] as const;
 export const emptyMeal=():Meal=>({calories:null,protein:null,carbs:null,fat:null,note:''});
+export function addMeal(current:Meal,incoming:Meal):Meal{
+ if(!current.note.trim()&&nutrients.every(k=>current[k]===null))return {...incoming};
+ return {...Object.fromEntries(nutrients.map(k=>[k,current[k]===null||incoming[k]===null?null:Math.round((current[k]!+incoming[k]!)*10)/10])),note:[current.note,incoming.note].filter(Boolean).join(' + ').slice(0,300)} as Meal;
+}
 export function mealTotals(meals:Meals){return Object.fromEntries(nutrients.map(k=>{const values=Object.values(meals).map(m=>m[k]).filter((n):n is number=>n!==null);return [k,values.length?Math.round(values.reduce((a,b)=>a+b,0)*10)/10:null]})) as Pick<Meal,typeof nutrients[number]>}
 export function mealsForEntry(entry:Pick<Meal,'calories'|'protein'|'carbs'|'fat'>&{meals?:Meals}):Meals{
  if(entry.meals)return entry.meals;
