@@ -1,7 +1,7 @@
 import {mealTotalsMatch,type Meals} from './meals';
 export type Profile = { planRevision?:number; paceStart?:string; paceWeight?:number; weight:number; height:number; age:number; start:string; adjustment:number; baselineWeight:number; bodyFat:number; baselineDate:string };
 export type Entry = { weight:number|null; bodyFat:number|null; sleep:number|null; soreness:number; pain:boolean; extra:number; calories:number|null; protein:number|null; carbs:number|null; fat:number|null; cardio:number|null; cardioOther?:number|null; notes:string; done:string[]; lifts:Record<string,string>; sets?:Record<string,number>; loads?:Record<string,number>; activityComplete?:boolean; foodComplete?:boolean; meals?:Meals; nutritionTarget?:{calories:number;protein:number;carbs:number;fat:number} };
-export const defaultProfile:Profile={planRevision:1,paceStart:dateKey(),paceWeight:80,weight:80,height:175,age:30,start:dateKey(),adjustment:0,baselineWeight:80,bodyFat:20,baselineDate:dateKey()};
+export const defaultProfile:Profile={planRevision:1,paceStart:'2026-09-08',paceWeight:114,weight:114,height:185,age:26,start:'2026-09-08',adjustment:0,baselineWeight:112,bodyFat:30,baselineDate:'2026-09-08'};
 export const emptyEntry=():Entry=>({weight:null,bodyFat:null,sleep:null,soreness:0,pain:false,extra:0,calories:null,protein:null,carbs:null,fat:null,cardio:null,notes:'',done:[],lifts:{}});
 export function dateKey(d=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit'}).format(d)}
 export const days=['จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์','อาทิตย์'];
@@ -65,7 +65,7 @@ export function projection(p:Profile,date:string){const weeks=Math.max(0,(Date.p
 export function compositionScenario(p:Profile){const lean=p.baselineWeight*(1-p.bodyFat/100);return {lean,atWeights:[90,95].map(weight=>({weight,bodyFat:(1-lean/weight)*100})),atBodyFats:[20,15,10].map(bodyFat=>({bodyFat,weight:lean/(1-bodyFat/100)}))}}
 
 // Apply the latest user-reported calculation weight once; preserve the separately dated BF baseline.
-export function currentProfile(p:Profile):Profile{return {...defaultProfile,...p}}
+export function currentProfile(p:Profile):Profile{return p.planRevision===1?{...defaultProfile,...p}:{...defaultProfile,...p,weight:114,paceWeight:114,paceStart:'2026-09-08',planRevision:1}}
 
 export function proteinWeightForDate(p:Profile,logs:Record<string,Entry>,date:string,entry:Entry){
  const usable=(w:number|null):w is number=>typeof w==='number'&&Number.isFinite(w)&&w>=40&&w<=250;

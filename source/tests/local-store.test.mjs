@@ -16,3 +16,13 @@ test('merge defaults preserve existing dates and profile; explicit replacement w
 test('path isolation and requested exercise changes',()=>{assert.notEqual(storageKey('/one/'),storageKey('/two/'));const ids=plans.flatMap(p=>p.exercises.map(e=>e.id));for(const id of ['hipabduction','dbseatedcalf','dbside'])assert(ids.includes(id));for(const id of ['lateral','seatedcalf','scaption'])assert(!ids.includes(id))});
 
 test('legacy profiles without any optional fields retain their own baseline fallback',()=>{const p={...profile};delete p.planRevision;delete p.paceWeight;delete p.paceStart;const result=displayProfile(parseData(JSON.stringify({profile:p,logs:{}})).profile);assert.deepEqual(result,p);assert.equal(result.paceWeight??result.baselineWeight,97)});
+
+test('restore original defaults only for the exact first-release sample',()=>{
+ const sample={planRevision:1,paceStart:'2026-09-09',paceWeight:80,weight:80,height:175,age:30,start:'2026-09-09',adjustment:0,baselineWeight:80,bodyFat:20,baselineDate:'2026-09-09'};
+ assert.deepEqual(displayProfile(null),defaultProfile);
+ assert.deepEqual(displayProfile(sample),defaultProfile);
+ for(const changed of [{weight:81},{height:180},{adjustment:50},{bodyFat:21}])assert.deepEqual(displayProfile({...sample,...changed}),{...sample,...changed});
+ const stored={profile:sample,logs:data.logs};
+ const parsed=parseData(JSON.stringify(stored));displayProfile(parsed.profile);
+ assert.deepEqual(parsed.logs,data.logs);
+});

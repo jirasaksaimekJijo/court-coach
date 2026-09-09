@@ -34,7 +34,7 @@ The published `dist/` contains HTML, CSS, JavaScript and assets. React remains b
 
 There is no application login, identity header, session token, password, backend API, or ChatGPT dependency. On load, the client reads `court-coach:local:v1:<site-path>`, validates its JSON, and restores the profile and daily logs. Saving validates and serializes the data before calling `localStorage.setItem`. The UUID revision identifies a saved version; it is not an authentication token. Web Locks, where available, serialize writes, and an expected-value comparison detects stale data from another tab. Without Web Locks that comparison is not an atomic cross-tab transaction.
 
-Storage is local to the browser profile and origin. The site-path suffix separates app records but is not a security boundary: other JavaScript on the same origin can access them. Data is not encrypted by this app, is not automatically uploaded to GitHub, and does not sync between devices. JSON export/import provides backup and migration; anyone with access to the browser profile or backup can read the logs.
+Storage is local to the browser profile and origin. The site-path suffix separates app records but is not a security boundary: other JavaScript on the same origin can access them. Data is not encrypted by this app, is not automatically uploaded to GitHub, and does not sync between devices. The backup/import UI was removed at the owner’s request; storage parsing and backup helpers remain in source. Anyone with access to the browser profile or a copied backup can read the logs.
 
 See [DATA-MIGRATION.md](DATA-MIGRATION.md) before leaving Sites. Existing server records are not included in the static package and must be exported while the original authenticated app remains accessible.
 

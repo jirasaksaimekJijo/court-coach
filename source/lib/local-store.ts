@@ -34,4 +34,9 @@ export function writeLocal(storage:Store,key:string,data:LocalData,expected:stri
 export function mergeImport(existing:LocalData,incoming:LocalData,overwrite:boolean,useProfile:boolean):LocalData{
  return {profile:useProfile&&incoming.profile?incoming.profile:existing.profile,logs:overwrite?{...existing.logs,...incoming.logs}:{...incoming.logs,...existing.logs}};
 }
-export function displayProfile(p:Profile|null):Profile{return p?{...p}:{...defaultProfile};}
+export function displayProfile(p:Profile|null):Profile{
+ // Only replace the exact placeholder profile shipped in the first static release.
+ // User-edited profiles and all daily logs remain untouched.
+ const sample=p&&p.planRevision===1&&p.weight===80&&p.height===175&&p.age===30&&p.baselineWeight===80&&p.bodyFat===20&&p.paceWeight===80&&p.adjustment===0&&p.start===p.baselineDate&&p.paceStart===p.baselineDate;
+ return !p||sample?{...defaultProfile}:{...p};
+}

@@ -1,4 +1,5 @@
 import type {Meal} from './meals';
+export const foodSource='https://chatgpt.com/share/6aa02e08-be70-83ec-be10-a68d45e531ea';
 export type FoodPreset={id:string;name:string;unit:string;tag:string;ingredients:string[];method:string;estimate:string;values:Omit<Meal,'note'>};
 export const foodPresets:FoodPreset[]=[
  {id:'overnight-oats',name:'Overnight oats สูตรเดิม',unit:'กล่อง',tag:'มื้อเช้า',ingredients:['ข้าวโอ๊ต 40 g','นมหวานน้อย 200 ml','เมล็ดเจีย 10 g','เวย์ 1 scoop','กล้วยประมาณ 65 g','น้ำผึ้ง 5 g','เม็ดมะม่วงหิมพานต์ 10 g'],method:'ผสมโอ๊ต นม เมล็ดเจีย เวย์ และน้ำผึ้ง แช่ตู้เย็น ใส่กล้วยและเม็ดมะม่วงตอนกิน',estimate:'ค่าประมาณตามตารางในแชต ยี่ห้อนมและขนาด scoop ทำให้ค่าจริงต่างได้',values:{calories:539,protein:40,carbs:66,fat:15}},

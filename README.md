@@ -1,33 +1,26 @@
 # Court Coach
 
-Workout plans, morning weight/body-fat logs, five daily meals, nutrition goals and weekly progress, stored in your browser.
+[Open Court Coach](https://jirasaksaimekjijo.github.io/court-coach/)
 
-**Live site:** https://jirasaksaimekJijo.github.io/court-coach/
+Workout plans, morning weight/body-fat logs, five daily meals, nutrition goals and weekly progress. The original personal plan and content have been restored with the owner's approval to publish them in this public repository. Saved daily records remain in browser localStorage and are not uploaded to GitHub.
 
-## Hosting
+## Hosting and updates
 
-GitHub Pages publishes `main` from `/ (root)`. The root contains the prebuilt HTML, CSS, JavaScript and exercise images. `.nojekyll` disables Jekyll processing. No backend, login, API key, paid hosting or ChatGPT subscription is needed to run this version.
+GitHub Pages publishes `main` from `/ (root)`. HTML, CSS, JavaScript and images are prebuilt at the root. React/TypeScript source is in `source/`. No backend, login, API key, or ChatGPT subscription is required.
 
-## Data and backups
-
-Use the Progress tab to set up your profile or import existing records. Save daily changes and export JSON backups regularly. Data stays in this browser and does not automatically sync between devices. Clearing site data can erase logs. Never commit personal backups to this public repository.
-
-Existing Sites records are not included: follow [DATA-MIGRATION.md](DATA-MIGRATION.md) to export/import them while the original site remains accessible.
-
-## Edit and rebuild
-
-Editable React/TypeScript source is in `source/`; the deployed JavaScript bundles React. With Node 24+ and pnpm 11:
+With Node 24+ and pnpm 11, run inside `source/`:
 
 ```sh
-cd source
 pnpm install --frozen-lockfile
 pnpm test
 pnpm build
 node tests/check-static.mjs
 ```
 
-Copy the contents of `source/dist/` to the repository root and commit/push to `main` to publish updates. Preserve the root documentation and `source/` directory. Preview locally with `pnpm preview --host 127.0.0.1` from `source/`.
+Copy `source/dist/` contents to the repository root and push to `main`. Preserve documentation and the `source/` directory. GitHub Pages republishes automatically. For a new repository, enable **Settings → Pages → Deploy from a branch → main / (root)**.
 
-[Authentication and data-flow walkthrough](AUTHENTICATION.md) explains the original Sites API and the localStorage replacement. Exercise images retain their [original license](exercises/LICENSE.txt).
+## Local records
 
-[GitHub Pages deployment documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+Use Save day after editing. The backup/import panel and first-run setup banner were removed as requested. Personal settings remain in Progress. Clearing browser/site data can erase records; devices do not sync. See [DATA-MIGRATION.md](DATA-MIGRATION.md) for the current storage details and [AUTHENTICATION.md](AUTHENTICATION.md) for the original authentication architecture.
+
+[Restoration checks](RESTORATION.md) · [Exercise image license](exercises/LICENSE.txt) · [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)

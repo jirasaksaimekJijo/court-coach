@@ -1,29 +1,9 @@
-# การใช้ข้อมูลและย้ายจาก Sites
+# Local data after content restoration
 
-## ตั้งค่าและข้อมูลส่วนตัว
+The backup/import panel and initial setup banner have been removed at the owner's request. There are no in-app import/export buttons in this version. The older source component remains available for a future developer to re-enable, but it is not rendered.
 
-- เปิดครั้งแรกไป **ความก้าวหน้า → ข้อมูลส่วนตัวและตั้งค่าแผน** แล้วบันทึก หรือใช้ **ข้อมูลในเครื่องและไฟล์สำรอง → เลือกไฟล์เพื่อนำเข้า**
-- ตัวเลขตั้งต้นในเว็บเป็นตัวอย่าง ไม่ใช่ข้อมูลจริงของคุณ ต้องตั้งค่าหรือนำเข้าก่อนเริ่มบันทึกประจำวัน
-- น้ำหนัก/BF, อาหาร 5 มื้อ, กิโล/เซ็ต, คาร์ดิโอ, ประวัติรายสัปดาห์ เก็บใน `localStorage` ของเบราว์เซอร์นั้น ใช้ปุ่ม **บันทึกประจำวัน** ก่อนปิดหน้า
-- ไป **ความก้าวหน้า → ส่งออกข้อมูล JSON** เพื่อสำรอง/ย้ายเครื่อง รวมวันที่กรอกค้างเมื่อค่าถูกต้อง นำเข้าไฟล์บนมือถือได้ และดูจำนวนวันซ้ำก่อนยืนยัน
-- ค่าเริ่มต้นตอนนำเข้าจะเก็บวันที่ซ้ำของเครื่องเดิม เลือกแทนที่ได้เอง วันอื่นไม่ถูกลบ; ระบบดาวน์โหลดสำเนาก่อนนำเข้า
-- **ไม่มีการซิงก์ระหว่างมือถือกับคอมอัตโนมัติ** โหมดไม่ระบุตัวตน/ล้างข้อมูลเว็บไซต์/เปลี่ยนเบราว์เซอร์หรือชื่อเว็บ อาจทำให้ไม่เห็นข้อมูลเดิม ต้องนำเข้าไฟล์สำรอง
-- เว็บ/โค้ดบน GitHub Pages เป็นสาธารณะ แต่บันทึกใน localStorage ไม่ถูกส่งเข้า GitHub **ห้ามอัปโหลดไฟล์สำรอง JSON, ข้อมูลจาก Sites, .env หรือโฟลเดอร์ฐานข้อมูลขึ้น repository**
-- ต้องมีอินเทอร์เน็ตตอนเปิดเว็บ ไม่มี service worker สำหรับเปิดออฟไลน์เต็มรูปแบบ เมื่อเว็บเปิดอยู่การบันทึกไม่ใช้เครือข่าย
+Daily logs and saved profile settings still use `court-coach:local:v1:/court-coach/` in browser localStorage on the live GitHub Pages origin. Existing daily logs are preserved. A profile that exactly matches the generic 80 kg placeholder from the first static release uses the restored original defaults; customized profiles remain unchanged. This does not create or alter dated weight/meal records.
 
-## ย้ายประวัติจาก Sites เดิม
+Browser storage does not sync across devices and can be lost when site data is cleared. Advanced users can inspect or copy the stored JSON through their browser developer tools (Application/Storage → Local Storage). Keep any copied records private; do not upload them to the public repository.
 
-ไฟล์เผยแพร่นี้ **ยังไม่มีประวัติในฐานข้อมูล Sites ของคุณ** และเว็บใหม่ไม่สามารถอ่านข้ามโดเมนได้เอง
-
-1. ขณะยังเข้าเว็บเดิมได้ ให้เข้าสู่ระบบในเว็บ Court Coach เดิม แล้วเปิด path `/api/coach` ต่อท้าย URL เว็บเดิมในแท็บเดียวกัน
-2. ถ้าเห็น JSON ที่มี `profile` และ `logs` ให้บันทึก/คัดลอก JSON ทั้งก้อนเป็นไฟล์ `.json` (ห้ามใช้หน้า HTML หรือข้อความ error แทน)
-3. เปิดเว็บใหม่ → **ความก้าวหน้า → เลือกไฟล์เพื่อนำเข้า** ตรวจจำนวนวันและเลือกใช้ข้อมูลส่วนตัวจากไฟล์ แล้ว **ยืนยันนำเข้า**
-4. ตรวจน้ำหนัก วันที่เก่า อาหาร และกิโล/เซ็ต แล้วส่งออกไฟล์สำรองจากเว็บใหม่อีกรอบก่อนเลิกใช้เว็บเดิม
-
-API รุ่นเดิมคืนได้สูงสุด 730 วันล่าสุดเท่านั้น ถ้า Sites เดิมเข้าไม่ได้ ต้องใช้ไฟล์สำรองที่มีอยู่; โปรแกรมไม่สร้างประวัติขึ้นมาแทน
-
-หากพื้นที่ localStorage เต็ม/ถูกปิดกั้น แอปจะแจ้งว่าบันทึกไม่สำเร็จและยังเก็บสิ่งที่กรอกไว้ในหน้า ให้ส่งออก JSON ก่อนปิด ถ้าพบข้อมูลเปลี่ยนจากอีกแท็บ ให้ส่งออกสิ่งที่ค้างก่อนกดโหลดล่าสุด
-
-รูปท่าออกกำลังกาย: [free-exercise-db](https://github.com/yuhonas/free-exercise-db) — ดู `exercises/LICENSE.txt` ในไฟล์พร้อมเผยแพร่ หรือ `public/exercises/LICENSE.txt` ในซอร์ส
-
-อ้างอิงการเผยแพร่: [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), [Vite static deployment](https://vite.dev/guide/static-deploy.html)
+Historical records from the original Sites database are not included in the static files. While the old site remains accessible, its authenticated `/api/coach` endpoint returns the latest 730 days as JSON. Save that JSON privately if needed. This version has no import UI; restoring that history requires a separate migration step.
