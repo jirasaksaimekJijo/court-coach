@@ -1,0 +1,210 @@
+{
+  "squat": {
+    "name": "Goblet Squat",
+    "images": [
+      "./exercises/squat-0.jpg",
+      "./exercises/squat-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Goblet_Squat.json"
+  },
+  "rdl": {
+    "name": "Stiff-Legged Dumbbell Deadlift",
+    "images": [
+      "./exercises/rdl-0.jpg",
+      "./exercises/rdl-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Stiff-Legged_Dumbbell_Deadlift.json"
+  },
+  "split": {
+    "name": "Bodyweight Walking Lunge",
+    "images": [
+      "./exercises/split-0.jpg",
+      "./exercises/split-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Bodyweight_Walking_Lunge.json"
+  },
+  "calf": {
+    "name": "Standing Dumbbell Calf Raise",
+    "images": [
+      "./exercises/calf-0.jpg",
+      "./exercises/calf-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Standing_Dumbbell_Calf_Raise.json"
+  },
+  "deadbug": {
+    "name": "Dead Bug",
+    "images": [
+      "./exercises/deadbug-0.jpg",
+      "./exercises/deadbug-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dead_Bug.json"
+  },
+  "bench": {
+    "name": "Dumbbell Bench Press",
+    "images": [
+      "./exercises/bench-0.jpg",
+      "./exercises/bench-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dumbbell_Bench_Press.json"
+  },
+  "pulldown": {
+    "name": "Wide-Grip Lat Pulldown",
+    "images": [
+      "./exercises/pulldown-0.jpg",
+      "./exercises/pulldown-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Wide-Grip_Lat_Pulldown.json"
+  },
+  "row": {
+    "name": "Seated Cable Rows",
+    "images": [
+      "./exercises/row-0.jpg",
+      "./exercises/row-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Seated_Cable_Rows.json"
+  },
+  "face": {
+    "name": "Face Pull",
+    "images": [
+      "./exercises/face-0.jpg",
+      "./exercises/face-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Face_Pull.json"
+  },
+  "pallof": {
+    "name": "Pallof Press",
+    "images": [
+      "./exercises/pallof-0.jpg",
+      "./exercises/pallof-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Pallof_Press.json"
+  },
+  "external": {
+    "name": "External Rotation with Band",
+    "images": [
+      "./exercises/external-0.jpg",
+      "./exercises/external-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/External_Rotation_with_Band.json"
+  },
+  "scaption": {
+    "name": "Dumbbell Scaption",
+    "images": [
+      "./exercises/scaption-0.jpg",
+      "./exercises/scaption-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dumbbell_Scaption.json"
+  },
+  "carry": {
+    "name": "Farmer's Walk",
+    "images": [
+      "./exercises/carry-0.jpg",
+      "./exercises/carry-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Farmers_Walk.json"
+  },
+  "sideplank": {
+    "name": "Side Bridge",
+    "images": [
+      "./exercises/sideplank-0.jpg",
+      "./exercises/sideplank-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Side_Bridge.json"
+  },
+  "legpress": {
+    "name": "Leg Press",
+    "images": [
+      "./exercises/legpress-0.jpg",
+      "./exercises/legpress-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Leg_Press.json"
+  },
+  "stepup": {
+    "name": "Dumbbell Step Ups",
+    "images": [
+      "./exercises/stepup-0.jpg",
+      "./exercises/stepup-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dumbbell_Step_Ups.json"
+  },
+  "bridge": {
+    "name": "Butt Lift (Bridge)",
+    "images": [
+      "./exercises/bridge-0.jpg",
+      "./exercises/bridge-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Butt_Lift_Bridge.json"
+  },
+  "lateral": {
+    "name": "Side Leg Raises",
+    "images": [
+      "./exercises/lateral-0.jpg",
+      "./exercises/lateral-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Side_Leg_Raises.json"
+  },
+  "seatedcalf": {
+    "name": "Seated Calf Raise",
+    "images": [
+      "./exercises/seatedcalf-0.jpg",
+      "./exercises/seatedcalf-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Seated_Calf_Raise.json"
+  },
+  "chestrow": {
+    "name": "Dumbbell Incline Row",
+    "images": [
+      "./exercises/chestrow-0.jpg",
+      "./exercises/chestrow-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dumbbell_Incline_Row.json"
+  },
+  "incline": {
+    "name": "Incline Push-Up",
+    "images": [
+      "./exercises/incline-0.jpg",
+      "./exercises/incline-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Incline_Push-Up.json"
+  },
+  "rear": {
+    "name": "Seated Bent-Over Rear Delt Raise",
+    "images": [
+      "./exercises/rear-0.jpg",
+      "./exercises/rear-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Seated_Bent-Over_Rear_Delt_Raise.json"
+  },
+  "legcurl": {
+    "name": "Seated Leg Curl",
+    "images": [
+      "./exercises/legcurl-0.jpg",
+      "./exercises/legcurl-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Seated_Leg_Curl.json"
+  },
+  "hipabduction": {
+    "name": "Thigh Abductor",
+    "images": [
+      "./exercises/hipabduction-0.jpg",
+      "./exercises/hipabduction-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Thigh_Abductor.json"
+  },
+  "dbseatedcalf": {
+    "name": "Dumbbell Seated One-Leg Calf Raise",
+    "images": [
+      "./exercises/dbseatedcalf-0.jpg",
+      "./exercises/dbseatedcalf-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dumbbell_Seated_One-Leg_Calf_Raise.json"
+  },
+  "dbside": {
+    "name": "Side Lateral Raise",
+    "images": [
+      "./exercises/dbside-0.jpg",
+      "./exercises/dbside-1.jpg"
+    ],
+    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Side_Lateral_Raise.json"
+  }
+}
