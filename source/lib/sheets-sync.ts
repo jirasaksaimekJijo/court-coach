@@ -24,7 +24,9 @@ export function flushQueue():Promise<number>{if(active)return active;active=send
 async function sendQueue(){const c=connection();if(!c)return Object.keys(pending()).length;
  for(const record of Object.values(pending()).sort((a,b)=>a.updatedAt.localeCompare(b.updatedAt))){
   // Opaque POST completion is NOT treated as success. Poll a receipt written after Sheets.flush().
-  await fetch(c.endpoint,{method:'POST',mode:'no-cors',credentials:'omit',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({...record,token:c.token}),signal:AbortSignal.timeout(30000)});
+  // Google may commit the write even when its redirect never completes in the browser.
+  // Always check the receipt, including after a POST timeout/network error.
+  try{await fetch(c.endpoint,{method:'POST',mode:'no-cors',credentials:'omit',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({...record,token:c.token}),signal:AbortSignal.timeout(10000)})}catch{}
   let ack:Ack|null=null;
   for(let i=0;i<5&&!ack;i++){if(i)await new Promise(r=>setTimeout(r,1500));ack=await acknowledge(c.endpoint,record.requestId)}
   if(!ack)throw Error('ยังไม่ได้รับคำยืนยันจากชีต รายการยังอยู่ในคิว');
