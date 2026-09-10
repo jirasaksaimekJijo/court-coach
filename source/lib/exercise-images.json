@@ -1,11 +1,12 @@
 {
   "squat": {
-    "name": "Goblet Squat",
+    "name": "Goblet squat",
     "images": [
-      "./exercises/squat-0.jpg",
-      "./exercises/squat-1.jpg"
+      "./exercises/foundation-squat.jpg"
     ],
-    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Goblet_Squat.json"
+    "source": "https://liftmanual.com/dumbbell-goblet-squat/",
+    "note": "",
+    "layout": "pair"
   },
   "rdl": {
     "name": "Stiff-Legged Dumbbell Deadlift",
@@ -32,20 +33,22 @@
     "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Standing_Dumbbell_Calf_Raise.json"
   },
   "deadbug": {
-    "name": "Dead Bug",
+    "name": "Dead bug",
     "images": [
-      "./exercises/deadbug-0.jpg",
-      "./exercises/deadbug-1.jpg"
+      "./exercises/foundation-deadbug.jpg"
     ],
-    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dead_Bug.json"
+    "source": "https://liftmanual.com/dead-bug/",
+    "note": "",
+    "layout": "pair"
   },
   "bench": {
-    "name": "Dumbbell Bench Press",
+    "name": "Dumbbell bench press",
     "images": [
-      "./exercises/bench-0.jpg",
-      "./exercises/bench-1.jpg"
+      "./exercises/foundation-bench.jpg"
     ],
-    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dumbbell_Bench_Press.json"
+    "source": "https://liftmanual.com/dumbbell-bench-press/",
+    "note": "",
+    "layout": "pair"
   },
   "pulldown": {
     "name": "Wide-Grip Lat Pulldown",
@@ -72,20 +75,22 @@
     "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Face_Pull.json"
   },
   "pallof": {
-    "name": "Pallof Press",
+    "name": "Standing Pallof press",
     "images": [
-      "./exercises/pallof-0.jpg",
-      "./exercises/pallof-1.jpg"
+      "./exercises/foundation-pallof.jpg"
     ],
-    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Pallof_Press.json"
+    "source": "https://liftmanual.com/cable-horizontal-pallof-press/",
+    "note": "",
+    "layout": "pair"
   },
   "external": {
-    "name": "External Rotation with Band",
+    "name": "Light-band external rotation",
     "images": [
-      "./exercises/external-0.jpg",
-      "./exercises/external-1.jpg"
+      "./exercises/foundation-external.jpg"
     ],
-    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/External_Rotation_with_Band.json"
+    "source": "https://liftmanual.com/resistance-band-external-rotation/",
+    "note": "",
+    "layout": "pair"
   },
   "scaption": {
     "name": "Dumbbell Scaption",
@@ -151,12 +156,13 @@
     "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Seated_Calf_Raise.json"
   },
   "chestrow": {
-    "name": "Dumbbell Incline Row",
+    "name": "Chest-supported row",
     "images": [
-      "./exercises/chestrow-0.jpg",
-      "./exercises/chestrow-1.jpg"
+      "./exercises/foundation-chestrow.jpg"
     ],
-    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Dumbbell_Incline_Row.json"
+    "source": "https://liftmanual.com/dumbbell-incline-row/",
+    "note": "",
+    "layout": "pair"
   },
   "incline": {
     "name": "Incline Push-Up",
@@ -175,12 +181,13 @@
     "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Seated_Bent-Over_Rear_Delt_Raise.json"
   },
   "legcurl": {
-    "name": "Seated Leg Curl",
+    "name": "Seated leg curl",
     "images": [
-      "./exercises/legcurl-0.jpg",
-      "./exercises/legcurl-1.jpg"
+      "./exercises/foundation-legcurl.jpg"
     ],
-    "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Seated_Leg_Curl.json"
+    "source": "https://liftmanual.com/lever-seated-leg-curl/",
+    "note": "",
+    "layout": "pair"
   },
   "hipabduction": {
     "name": "Thigh Abductor",
@@ -205,5 +212,285 @@
       "./exercises/dbside-1.jpg"
     ],
     "source": "https://github.com/yuhonas/free-exercise-db/blob/main/exercises/Side_Lateral_Raise.json"
+  },
+  "supportsplit": {
+    "name": "Supported dumbbell split squat",
+    "images": [
+      "./exercises/foundation-supportsplit.jpg"
+    ],
+    "source": "https://liftmanual.com/dumbbell-split-squat/",
+    "note": "The illustration shows an unsupported split squat. For your prescribed version, hold a stable support lightly with one hand and a dumbbell in the other.",
+    "layout": "pair"
+  },
+  "calfmachine": {
+    "name": "Standing calf-raise machine",
+    "images": [
+      "./exercises/foundation-calfmachine.webp"
+    ],
+    "source": "https://liftmanual.com/lever-standing-calf-raise/",
+    "note": "",
+    "layout": "animation"
+  },
+  "reversecrunch": {
+    "name": "Reverse crunch",
+    "images": [
+      "./exercises/foundation-reversecrunch.jpg"
+    ],
+    "source": "https://liftmanual.com/reverse-crunch/",
+    "note": "",
+    "layout": "pair"
+  },
+  "scoopthrow": {
+    "name": "Split-stance medicine-ball rotational scoop throw",
+    "images": [
+      "./exercises/foundation-scoopthrow.jpg"
+    ],
+    "source": "https://liftmanual.com/medicine-ball-rotational-throw/",
+    "note": "Use a split stance and a light 1–2 kg medicine ball as prescribed. The illustration shows the rotational throw with parallel feet.",
+    "layout": "pair"
+  },
+  "landmine": {
+    "name": "Half-kneeling single-arm landmine press",
+    "images": [
+      "./exercises/foundation-landmine.webp"
+    ],
+    "source": "https://liftmanual.com/landmine-kneeling-one-arm-shoulder-press/",
+    "note": "",
+    "layout": "animation"
+  },
+  "neutralpull": {
+    "name": "Neutral-grip lat pulldown",
+    "images": [
+      "./exercises/foundation-neutralpull.jpg"
+    ],
+    "source": "https://liftmanual.com/cable-wide-neutral-grip-pulldown/",
+    "note": "",
+    "layout": "pair"
+  },
+  "cableexternal": {
+    "name": "Cable external rotation, elbow by side",
+    "images": [
+      "./exercises/foundation-cableexternal.jpg"
+    ],
+    "source": "https://liftmanual.com/cable-standing-shoulder-external-rotation/",
+    "note": "",
+    "layout": "pair"
+  },
+  "yraise": {
+    "name": "Chest-supported Y raise",
+    "images": [
+      "./exercises/foundation-yraise.jpg"
+    ],
+    "source": "https://liftmanual.com/dumbbell-incline-y-raise/",
+    "note": "",
+    "layout": "pair"
+  },
+  "supportlunge": {
+    "name": "Supported lateral lunge",
+    "images": [
+      "./exercises/foundation-supportlunge.jpg"
+    ],
+    "source": "https://liftmanual.com/dumbbell-lateral-lunge/",
+    "note": "For your prescribed supported lateral lunge, use light hand support on a stable rail or rack. The illustration shows the leg movement without support.",
+    "layout": "pair"
+  },
+  "machinepress": {
+    "name": "Machine chest press",
+    "images": [
+      "./exercises/foundation-machinepress.jpg"
+    ],
+    "source": "https://liftmanual.com/lever-chest-press/",
+    "note": "",
+    "layout": "pair"
+  },
+  "dbonerow": {
+    "name": "Bench-supported single-arm dumbbell row",
+    "images": [
+      "./exercises/foundation-dbonerow.jpg"
+    ],
+    "source": "https://liftmanual.com/dumbbell-one-arm-bent-over-row/",
+    "note": "",
+    "layout": "pair"
+  },
+  "legextension": {
+    "name": "Leg extension",
+    "images": [
+      "./exercises/foundation-legextension.jpg"
+    ],
+    "source": "https://liftmanual.com/lever-leg-extension/",
+    "note": "",
+    "layout": "pair"
+  },
+  "wallslide": {
+    "name": "Serratus wall slide",
+    "images": [
+      "./exercises/foundation-wallslide.jpg"
+    ],
+    "source": "https://liftmanual.com/serratus-wall-slide/",
+    "note": "",
+    "layout": "pair"
+  },
+  "cablecurl": {
+    "name": "Cable biceps curl",
+    "images": [
+      "./exercises/foundation-cablecurl.jpg"
+    ],
+    "source": "https://liftmanual.com/cable-curl/",
+    "note": "",
+    "layout": "pair"
+  },
+  "ankleeversion": {
+    "name": "Band ankle eversion",
+    "images": [
+      "./exercises/foundation-ankleeversion.webp"
+    ],
+    "source": "https://liftmanual.com/resistance-band-foot-eversion/",
+    "note": "",
+    "layout": "animation"
+  },
+  "singlebalance": {
+    "name": "Supported single-leg balance",
+    "images": [
+      "./exercises/foundation-singlebalance.jpg"
+    ],
+    "source": "https://liftmanual.com/single-leg-stand/",
+    "note": "Keep a stable support within reach and use light fingertip support. The illustration shows the unsupported position.",
+    "layout": "pair"
+  },
+  "sideabduction": {
+    "name": "Side-lying hip abduction",
+    "images": [
+      "./exercises/foundation-sideabduction.jpg"
+    ],
+    "source": "https://liftmanual.com/side-hip-abduction/",
+    "note": "",
+    "layout": "pair"
+  },
+  "bandrow": {
+    "name": "Light-band row",
+    "images": [
+      "./exercises/foundation-bandrow.jpg"
+    ],
+    "source": "https://liftmanual.com/band-seated-row/",
+    "note": "",
+    "layout": "pair"
+  },
+  "ropepress": {
+    "name": "Rope triceps pressdown",
+    "images": [
+      "./exercises/foundation-ropepress.jpg"
+    ],
+    "source": "https://liftmanual.com/cable-pushdown/",
+    "note": "",
+    "layout": "pair"
+  },
+  "wristextension": {
+    "name": "Seated dumbbell wrist extension",
+    "images": [
+      "./exercises/foundation-wristextension.jpg"
+    ],
+    "source": "https://liftmanual.com/dumbbell-reverse-wrist-curl/",
+    "note": "",
+    "layout": "pair"
+  },
+  "snapdown": {
+    "name": "Snap-down to athletic stance",
+    "images": [
+      "./exercises/foundation-snapdown.png"
+    ],
+    "source": "./IMAGE-SOURCES.md",
+    "note": "Illustrated alternative · two positions.",
+    "layout": "pair"
+  },
+  "tibialis": {
+    "name": "Wall-supported tibialis raise",
+    "images": [
+      "./exercises/foundation-tibialis.png"
+    ],
+    "source": "./IMAGE-SOURCES.md",
+    "note": "Illustrated alternative · two positions.",
+    "layout": "pair"
+  },
+  "lateralstick": {
+    "name": "Lateral step-and-stick → small bound",
+    "images": [
+      "./exercises/foundation-lateralstick.png"
+    ],
+    "source": "./IMAGE-SOURCES.md",
+    "note": "Non-jumping step-and-stick. A small bound is a later progression only when the plan’s landing criteria are met.",
+    "layout": "pair",
+    "laterImages": [
+      "./exercises/foundation-lateralbound.jpg"
+    ],
+    "laterSource": "https://liftmanual.com/lateral-bound/"
+  },
+  "dbromanian": {
+    "name": "Dumbbell Romanian deadlift",
+    "images": [
+      "./exercises/foundation-dbromanian.png"
+    ],
+    "source": "./IMAGE-SOURCES.md",
+    "note": "Your supplied reference.",
+    "layout": "pair"
+  },
+  "jumpstick": {
+    "name": "Low vertical jump-and-stick",
+    "images": [
+      "./exercises/foundation-jumpstick.jpg"
+    ],
+    "source": "https://liftmanual.com/jump-squat/",
+    "note": "Use a low jump and hold the landing for 2 seconds; reset each repetition.",
+    "layout": "pair",
+    "earlyImages": [
+      "./exercises/foundation-jumpstick-start.jpeg"
+    ],
+    "earlySource": "https://mgronline.com/celebonline/detail/9650000076600",
+    "earlyNote": "Weeks 1–2: squat-to-calf raise, without leaving the floor. Same sets and reps."
+  },
+  "shortfoot": {
+    "name": "Short-foot arch hold",
+    "images": [
+      "./exercises/foundation-shortfoot.png"
+    ],
+    "source": "https://www.pro-nozky.cz/en/blog/exercises-for-flat-feet/",
+    "note": "Follow the sets and holds above; the illustration also shows a general progression.",
+    "layout": "pair"
+  },
+  "serratusreach": {
+    "name": "Supine serratus reach with light dumbbells",
+    "images": [
+      "./exercises/foundation-serratusreach.jpg"
+    ],
+    "source": "https://www.dmoose.com/blogs/training/8-best-serratus-anterior-exercises-strength-chiseled-abs",
+    "note": "Supine reach: keep elbows straight and reach upward through the shoulder blades; use light dumbbells.",
+    "layout": "pair"
+  },
+  "unloadedcalf": {
+    "name": "Seated unloaded calf raise",
+    "images": [
+      "./exercises/foundation-unloadedcalf.webp"
+    ],
+    "source": "https://liftmanual.com/elevated-seated-calf-raise/",
+    "note": "Unloaded seated calf raise. Keep your forefeet on the floor for this easy session; the demonstration shows a raised surface.",
+    "layout": "animation"
+  },
+  "ballsqueeze": {
+    "name": "Supine ball adductor squeeze",
+    "images": [
+      "./exercises/foundation-ballsqueeze-0.jpg",
+      "./exercises/foundation-ballsqueeze-1.jpg"
+    ],
+    "source": "https://www.marattmd.com/learn/rehab-tha-adductor-squeeze.php",
+    "note": "Squeeze the ball between your knees without lifting the hips.",
+    "layout": "photos"
+  },
+  "heelslide": {
+    "name": "Supine alternating heel slide",
+    "images": [
+      "./exercises/foundation-heelslide-v2.png"
+    ],
+    "source": "./IMAGE-SOURCES.md",
+    "layout": "pair",
+    "note": "Illustrated alternative · slide one heel along the floor, return, then alternate sides."
   }
 }

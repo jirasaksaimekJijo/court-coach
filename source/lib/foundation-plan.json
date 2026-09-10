@@ -1,0 +1,524 @@
+[
+  {
+    "title": "lower-body strength and vertical control",
+    "tag": "MON",
+    "time": "60–75",
+    "minutes": 0,
+    "cardio": "No additional cardio prescribed in this plan",
+    "focus": "Six-week foundation block",
+    "warmup": "Warm-up, 8–10 minutes: easy bike 4 minutes; ankle rocks 8/side; body-weight squats 8; supported split squats 5/side. Complete the landing drills, then take 2–3 progressively heavier squat warm-up sets.",
+    "cooldown": "Cooldown, 4–5 minutes: walk 2 minutes; gentle straight-knee calf and hip-flexor stretches, 20–30 seconds/side.",
+    "exercises": [
+      {
+        "id": "snapdown",
+        "name": "Snap-down to athletic stance",
+        "sets": 2,
+        "reps": "4",
+        "rest": 45,
+        "restLabel": "45 sec",
+        "intensity": "RPE 3; body weight",
+        "cue": "From standing tall, settle quickly into bent hips and knees; hold a stable stance for 2 seconds.",
+        "power": true
+      },
+      {
+        "id": "jumpstick",
+        "name": "Low vertical jump-and-stick",
+        "sets": 2,
+        "reps": "3",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 5; body weight",
+        "cue": "Use a quick takeoff and manageable height; absorb the landing and hold for 2 seconds.",
+        "power": true
+      },
+      {
+        "id": "squat",
+        "name": "Goblet squat",
+        "sets": 3,
+        "reps": "6–10",
+        "rest": 120,
+        "restLabel": "2 min",
+        "intensity": "RPE 7–8",
+        "cue": "Build force for pushing out of defensive positions; keep the whole foot planted.",
+        "power": false
+      },
+      {
+        "id": "supportsplit",
+        "name": "Supported dumbbell split squat",
+        "sets": 2,
+        "reps": "8/side",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 7",
+        "cue": "Develop unilateral lunge strength; use light hand support and track the knee with the toes.",
+        "power": false
+      },
+      {
+        "id": "legcurl",
+        "name": "Seated leg curl",
+        "sets": 3,
+        "reps": "10–12",
+        "rest": 75,
+        "restLabel": "75 sec",
+        "intensity": "RPE 7",
+        "cue": "Strengthen hamstrings for braking and lower-limb control; keep hips against the pad.",
+        "power": false
+      },
+      {
+        "id": "calfmachine",
+        "name": "Standing calf-raise machine",
+        "sets": 3,
+        "reps": "8–12",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 7",
+        "cue": "Build calf/Achilles loading capacity; lower under control and avoid bouncing.",
+        "power": false
+      },
+      {
+        "id": "tibialis",
+        "name": "Wall-supported tibialis raise",
+        "sets": 2,
+        "reps": "12–15",
+        "rest": 45,
+        "restLabel": "45 sec",
+        "intensity": "RPE 6",
+        "cue": "Strengthen ankle dorsiflexors for foot positioning; keep heels grounded.",
+        "power": false
+      },
+      {
+        "id": "reversecrunch",
+        "name": "Reverse crunch",
+        "sets": 2,
+        "reps": "8–12",
+        "rest": 45,
+        "restLabel": "45 sec",
+        "intensity": "RPE 6",
+        "cue": "Practise pelvic control; curl the pelvis gently without swinging the legs.",
+        "power": false
+      }
+    ]
+  },
+  {
+    "title": "upper-body strength and rotational power",
+    "tag": "TUE",
+    "time": "65–80",
+    "minutes": 0,
+    "cardio": "No additional cardio prescribed in this plan",
+    "focus": "Six-week foundation block",
+    "warmup": "Warm-up, 8–10 minutes: bike or walk 3 minutes; thoracic rotations 6/side; wall slides 8; very light band external rotations 10/side; several gentle throw rehearsals. Use two lighter sets before bench pressing.",
+    "cooldown": "Cooldown, 4–5 minutes: easy walk 2 minutes; gentle doorway chest stretch 20 seconds/side; open-book rotations 5/side.",
+    "exercises": [
+      {
+        "id": "scoopthrow",
+        "name": "Split-stance medicine-ball rotational scoop throw",
+        "sets": 3,
+        "reps": "3/side",
+        "rest": 75,
+        "restLabel": "75–90 sec",
+        "intensity": "RPE 5–6; light 1–2 kg ball",
+        "cue": "Turn through hips and trunk toward an approved wall; allow the rear foot to pivot and reset each throw.",
+        "power": true
+      },
+      {
+        "id": "bench",
+        "name": "Dumbbell bench press",
+        "sets": 3,
+        "reps": "8–10",
+        "rest": 120,
+        "restLabel": "2 min",
+        "intensity": "RPE 7–8",
+        "cue": "Develop upper-body force; use a comfortable grip with elbows roughly 30–45° from the torso.",
+        "power": false
+      },
+      {
+        "id": "chestrow",
+        "name": "Chest-supported row",
+        "sets": 3,
+        "reps": "8–12",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 7–8",
+        "cue": "Build upper-back strength for racquet-arm control without heavily loading the lower back.",
+        "power": false
+      },
+      {
+        "id": "landmine",
+        "name": "Half-kneeling single-arm landmine press",
+        "sets": 2,
+        "reps": "8/side",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 6–7",
+        "cue": "Train unilateral pressing and scapular upward rotation; avoid leaning or flaring the ribs.",
+        "power": false
+      },
+      {
+        "id": "neutralpull",
+        "name": "Neutral-grip lat pulldown",
+        "sets": 2,
+        "reps": "10–12",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 7",
+        "cue": "Build pulling strength; bring elbows down without swinging backward.",
+        "power": false
+      },
+      {
+        "id": "cableexternal",
+        "name": "Cable external rotation, elbow by side",
+        "sets": 2,
+        "reps": "12–15/side",
+        "rest": 45,
+        "restLabel": "45 sec",
+        "intensity": "RPE 5–6",
+        "cue": "Condition the rotator cuff; keep the upper arm still and use a small, controlled load.",
+        "power": false
+      },
+      {
+        "id": "yraise",
+        "name": "Chest-supported Y raise",
+        "sets": 2,
+        "reps": "10–12",
+        "rest": 45,
+        "restLabel": "45 sec",
+        "intensity": "RPE 5–6",
+        "cue": "Train lower-trapezius/scapular control; reach along the Y without lifting your chest.",
+        "power": false
+      },
+      {
+        "id": "pallof",
+        "name": "Standing Pallof press",
+        "sets": 2,
+        "reps": "8/side, 2-sec hold",
+        "rest": 45,
+        "restLabel": "45 sec",
+        "intensity": "RPE 6",
+        "cue": "Resist unwanted trunk rotation while the arms move, supporting stable racquet preparation.",
+        "power": false
+      }
+    ]
+  },
+  {
+    "title": "Full rest",
+    "tag": "WED",
+    "time": "—",
+    "minutes": 0,
+    "cardio": "Full rest",
+    "focus": "Wednesday is the only full rest day.",
+    "warmup": "",
+    "cooldown": "",
+    "exercises": []
+  },
+  {
+    "title": "full body and lateral control",
+    "tag": "THU",
+    "time": "65–80",
+    "minutes": 0,
+    "cardio": "No additional cardio prescribed in this plan",
+    "focus": "Six-week foundation block",
+    "warmup": "Warm-up, 8–10 minutes: bike 4 minutes; unloaded hip hinges 8; shallow lateral weight shifts 6/side; ankle rocks 8/side. Use two light Romanian-deadlift sets and a light chest-press set before working weights.",
+    "cooldown": "Cooldown, 4–5 minutes: walk 2 minutes; gentle bent-knee calf stretch 20 seconds/side; adductor rock-backs 6/side.",
+    "exercises": [
+      {
+        "id": "lateralstick",
+        "name": "Lateral step-and-stick → small bound",
+        "sets": 2,
+        "reps": "3/side",
+        "rest": 75,
+        "restLabel": "75–90 sec",
+        "intensity": "RPE 4–5; body weight",
+        "cue": "Practise lateral braking; stabilize the landing before returning, with no repeated rebounds.",
+        "power": true
+      },
+      {
+        "id": "dbromanian",
+        "name": "Dumbbell Romanian deadlift",
+        "sets": 2,
+        "reps": "8–10",
+        "rest": 120,
+        "restLabel": "2 min",
+        "intensity": "RPE 6–7",
+        "cue": "Build hip-extension and hamstring strength; move hips backward and stop before the back rounds.",
+        "power": false
+      },
+      {
+        "id": "supportlunge",
+        "name": "Supported lateral lunge",
+        "sets": 2,
+        "reps": "6–8/side",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 6–7",
+        "cue": "Strengthen side-to-side push-off; use a comfortable depth and keep the working foot planted.",
+        "power": false
+      },
+      {
+        "id": "machinepress",
+        "name": "Machine chest press",
+        "sets": 3,
+        "reps": "8–12",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 7",
+        "cue": "Add muscle-building pressing volume with a stable setup; avoid shrugging.",
+        "power": false
+      },
+      {
+        "id": "dbonerow",
+        "name": "Bench-supported single-arm dumbbell row",
+        "sets": 3,
+        "reps": "10–12/side",
+        "rest": 90,
+        "restLabel": "90 sec",
+        "intensity": "RPE 7",
+        "cue": "Train each side independently; keep the torso still instead of twisting the weight upward.",
+        "power": false
+      },
+      {
+        "id": "seatedcalf",
+        "name": "Seated calf raise",
+        "sets": 2,
+        "reps": "10–15",
+        "rest": 75,
+        "restLabel": "75 sec",
+        "intensity": "RPE 6–7",
+        "cue": "Load the bent-knee calf position relevant to low defensive stances; use smooth repetitions.",
+        "power": false
+      },
+      {
+        "id": "legextension",
+        "name": "Leg extension",
+        "sets": 2,
+        "reps": "10–15",
+        "rest": 75,
+        "restLabel": "75 sec",
+        "intensity": "RPE 7",
+        "cue": "Build quadriceps capacity for lunging and landing; align the machine with your knee and avoid kicking.",
+        "power": false
+      },
+      {
+        "id": "legcurl",
+        "name": "Seated leg curl",
+        "sets": 2,
+        "reps": "10–15",
+        "rest": 75,
+        "restLabel": "75 sec",
+        "intensity": "RPE 7",
+        "cue": "Add hamstring volume without more spinal loading; control both directions.",
+        "power": false
+      }
+    ]
+  },
+  {
+    "title": "light support before badminton",
+    "tag": "FRI",
+    "time": "25–35",
+    "minutes": 0,
+    "cardio": "No additional cardio prescribed in this plan",
+    "focus": "Light support before badminton",
+    "warmup": "Warm-up, 4 minutes: easy walk 3 minutes, then comfortable shoulder and ankle circles.",
+    "cooldown": "Cooldown, 3 minutes: easy walking and relaxed breathing; gentle chest or calf stretching only if comfortable.",
+    "exercises": [
+      {
+        "id": "wallslide",
+        "name": "Serratus wall slide",
+        "sets": 2,
+        "reps": "8",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 4",
+        "cue": "Let shoulder blades rotate upward naturally; keep ribs controlled.",
+        "power": false
+      },
+      {
+        "id": "external",
+        "name": "Light-band external rotation",
+        "sets": 1,
+        "reps": "12/side",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 4",
+        "cue": "Rehearse cuff control without creating shoulder fatigue before overhead hitting.",
+        "power": false
+      },
+      {
+        "id": "cablecurl",
+        "name": "Cable biceps curl",
+        "sets": 2,
+        "reps": "12",
+        "rest": 45,
+        "restLabel": "45 sec",
+        "intensity": "RPE 5",
+        "cue": "Use smooth elbow movement; keep shoulders and torso still.",
+        "power": false
+      },
+      {
+        "id": "ropepress",
+        "name": "Rope triceps pressdown",
+        "sets": 2,
+        "reps": "12",
+        "rest": 45,
+        "restLabel": "45 sec",
+        "intensity": "RPE 5",
+        "cue": "Practise controlled elbow extension without snapping into lockout.",
+        "power": false
+      },
+      {
+        "id": "wristextension",
+        "name": "Seated dumbbell wrist extension",
+        "sets": 1,
+        "reps": "12/side",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 4",
+        "cue": "Lightly condition wrist extensors for racquet control; support the forearm.",
+        "power": false
+      },
+      {
+        "id": "ankleeversion",
+        "name": "Band ankle eversion",
+        "sets": 1,
+        "reps": "12/side",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 4",
+        "cue": "Train lateral ankle control; move the foot without rotating the entire leg.",
+        "power": false
+      },
+      {
+        "id": "shortfoot",
+        "name": "Short-foot arch hold",
+        "sets": 2,
+        "reps": "5 holds × 5 sec/foot",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 3–4",
+        "cue": "Gently shorten the foot while keeping toes relaxed and the heel down.",
+        "power": false
+      },
+      {
+        "id": "deadbug",
+        "name": "Dead bug",
+        "sets": 2,
+        "reps": "6/side",
+        "rest": 30,
+        "restLabel": "30–45 sec",
+        "intensity": "RPE 4",
+        "cue": "Maintain trunk position while moving opposite limbs; stop before the back arches.",
+        "power": false
+      }
+    ]
+  },
+  {
+    "title": "Badminton — high training load",
+    "tag": "SAT",
+    "time": "240",
+    "minutes": 0,
+    "cardio": "4 hours including breaks; no weights",
+    "focus": "Saturday is rest from weights only.",
+    "warmup": "",
+    "cooldown": "",
+    "exercises": []
+  },
+  {
+    "title": "easy movement after Saturday",
+    "tag": "SUN",
+    "time": "20–25",
+    "minutes": 0,
+    "cardio": "No additional cardio prescribed in this plan",
+    "focus": "Easy movement after Saturday",
+    "warmup": "Warm-up, 4 minutes: comfortable walking or easy cycling; gentle ankle and shoulder circles.",
+    "cooldown": "Cooldown/mobility, 4–5 minutes: open-book rotations 5/side; gentle hip-flexor and calf stretches 20 seconds/side; relaxed breathing for 1 minute.",
+    "exercises": [
+      {
+        "id": "singlebalance",
+        "name": "Supported single-leg balance",
+        "sets": 1,
+        "reps": "20–30 sec/side",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 3",
+        "cue": "Maintain a steady foot and pelvis; use fingertip support as needed.",
+        "power": false
+      },
+      {
+        "id": "bridge",
+        "name": "Body-weight glute bridge",
+        "sets": 1,
+        "reps": "10",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 3–4",
+        "cue": "Extend through the hips without arching the lower back before Monday’s leg session.",
+        "power": false
+      },
+      {
+        "id": "sideabduction",
+        "name": "Side-lying hip abduction",
+        "sets": 1,
+        "reps": "10/side",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 4",
+        "cue": "Practise pelvic control; keep the top leg slightly behind the torso.",
+        "power": false
+      },
+      {
+        "id": "ballsqueeze",
+        "name": "Supine ball adductor squeeze",
+        "sets": 1,
+        "reps": "5 holds × 5 sec",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 3–4",
+        "cue": "Gently load the inner thighs; use a comfortable squeeze rather than maximum force.",
+        "power": false
+      },
+      {
+        "id": "unloadedcalf",
+        "name": "Seated unloaded calf raise",
+        "sets": 1,
+        "reps": "15",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 3",
+        "cue": "Move through comfortable ankle range without adding heavy Achilles loading.",
+        "power": false
+      },
+      {
+        "id": "serratusreach",
+        "name": "Supine serratus reach with light dumbbells",
+        "sets": 1,
+        "reps": "10",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 3–4",
+        "cue": "Reach shoulder blades gently upward with straight elbows and no shrugging.",
+        "power": false
+      },
+      {
+        "id": "bandrow",
+        "name": "Light-band row",
+        "sets": 1,
+        "reps": "12",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 4",
+        "cue": "Move the shoulder blades smoothly after Saturday’s repeated overhead work.",
+        "power": false
+      },
+      {
+        "id": "heelslide",
+        "name": "Supine alternating heel slide",
+        "sets": 1,
+        "reps": "6/side",
+        "rest": 30,
+        "restLabel": "30 sec",
+        "intensity": "RPE 3–4",
+        "cue": "Slide one heel away while keeping the pelvis still and breathing normally.",
+        "power": false
+      }
+    ]
+  }
+]
