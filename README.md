@@ -24,3 +24,9 @@ Copy `source/dist/` contents to the repository root and push to `main`. Preserve
 Use Save day after editing. The backup/import panel and first-run setup banner were removed as requested. Personal settings remain in Progress. Clearing browser/site data can erase local records and the connection key. Connected daily saves also back up to the restricted Google Sheet; sheet edits are not pulled into the app. See [SHEETS-SYNC.md](SHEETS-SYNC.md) for setup and behavior. See [DATA-MIGRATION.md](DATA-MIGRATION.md) for the current storage details and [AUTHENTICATION.md](AUTHENTICATION.md) for the original authentication architecture.
 
 [Restoration checks](RESTORATION.md) · [Exercise image license](exercises/LICENSE.txt) · [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+
+## Six-week foundation plan and personal menu
+
+The current program follows the supplied 40-slot plan exactly: eight exercises each on Monday, Tuesday, Thursday, Friday and Sunday; Wednesday full rest; Saturday four hours of badminton including breaks and no weights. The Training page preserves the full original tables. Home applies the weeks 1–2 strength cap and week 6 deload; after week 6, deload remains until the start date is reviewed. Warm-ups, cooldowns and progression rules are included. See [the complete supplied plan](./FOUNDATION-PLAN.md) and [image sources](./IMAGE-SOURCES.md).
+
+Food → **Add Menu Item** saves a named serving with optional calories, protein, carbohydrate, fat, ingredients and notes. Items persist in `court-coach:custom-foods:v1` in localStorage and appear in Home’s meal selector. Blank nutrient values stay unknown, not zero. Personal menu definitions are local to that browser; daily meal values continue to use the existing Google Sheets backup when connected. Existing saved days are not rewritten.
