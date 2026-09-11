@@ -27,5 +27,6 @@ test('server authenticates, upserts complete daily data, and protects formulas',
  send({...payload,token:'bad'});assert.equal(rows.length,0);
  send(payload);assert.equal(rows.length,2);assert.equal(rows[1][15],'เกิน 100 kcal');assert.equal(rows[1][19],"'=IMPORTXML(\"bad\")");assert.deepEqual(JSON.parse(rows[1].at(-1)),payload.entry);assert(receipts.get('ack:'+payload.requestId).ok);
  send({...payload,requestId:crypto.randomUUID(),entry:{...payload.entry,weight:109}});assert.equal(rows.length,2);assert.equal(rows[1][4],109);
+ const blank={...payload,requestId:crypto.randomUUID(),date:'2026-09-10',entry:{...emptyEntry(),nutritionTarget:{calories:2000,protein:180,carbs:220,fat:70}}};send(blank);assert.equal(rows[2][15],'');
  const older={...payload,requestId:crypto.randomUUID(),updatedAt:'2026-09-08T10:00:00.000Z'};send(older);assert.equal(rows[1][4],109);assert.equal(receipts.get('ack:'+older.requestId).ok,false);
 });
