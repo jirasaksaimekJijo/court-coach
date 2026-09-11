@@ -74,5 +74,5 @@ export const foodPresets:FoodPreset[]=[
 export function presetMeal(food:FoodPreset,portions:number):Meal{
  if(food.fixedPortions&&portions!==food.fixedPortions)throw new Error('สูตรนี้ใช้ครั้งละ 1 กล่อง');
  if(!Number.isFinite(portions)||portions<=0||portions>10)throw new Error('ระบุจำนวนส่วนมากกว่า 0 ถึง 10');
- return {...Object.fromEntries(Object.entries(food.values).map(([key,value])=>[key,value===null?null:Math.round(value*portions*10)/10])),note:`${food.name} × ${portions} ${food.unit} (ประมาณจากสูตร)${food.logNote?'; ฐานสูตร 1 ส่วน: '+food.logNote:''}`.slice(0,300)} as Meal;
+ return {...Object.fromEntries(Object.entries(food.values).map(([key,value])=>[key,value===null?null:Math.round(value*portions*10)/10])),note:`${food.name} × ${portions} ${food.unit}`.slice(0,300)} as Meal;
 }
