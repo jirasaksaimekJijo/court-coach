@@ -1,6 +1,8 @@
 import type {Entry,Profile} from './coach';
 export const sheetUrl='https://docs.google.com/spreadsheets/d/1t8s8k8cOQHQ4QdlZJeZmvSQZcPBIfxcT8fRIcHkyWdE/edit';
 const configKey='court-coach:sheets:connection:v1',queueKey='court-coach:sheets:queue:v1';
+export const sheetsConnectionKey=configKey;
+export const sheetsQueueKey=queueKey;
 export type Pending={date:string;entry:Entry;profile:Profile;updatedAt:string;requestId:string};
 type Config={endpoint:string;token:string};
 type Ack={requestId:string;ok:boolean;error?:string};
