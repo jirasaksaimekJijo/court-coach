@@ -62,8 +62,22 @@ function writeDay_(d){
    if(energyColumn>0){sh.insertColumnAfter(energyColumn);sh.getRange(1,energyColumn+1).setValue('พลังงานเทียบเป้า').setFontWeight('bold').setBackground('#174c42').setFontColor('#ffffff').setWrap(true);sh.setColumnWidth(energyColumn+1,150)}
   }
  }
+ backfillCalorieDelta_(sh);
  const last=sh.getLastRow();let index=last+1;
  if(last>1){const dates=sh.getRange(2,1,last-1,2).getDisplayValues();const at=dates.findIndex(r=>r[0]===d.date);if(at>=0){index=at+2;if(dates[at][1]>d.updatedAt)throw Error('มีบันทึกวันที่นี้ใหม่กว่าในชีต คิวเก่ายังอยู่ กรุณาตรวจข้อมูลก่อนส่งทับ')}}
  if(index>sh.getMaxRows())sh.insertRowsAfter(sh.getMaxRows(),1);
  sh.getRange(index,1,1,4).setNumberFormat('@');sh.getRange(index,1,1,row.length).setValues([row]);
+}
+function backfillCalorieDelta_(sh){
+ const last=sh.getLastRow();if(last<2)return;
+ const headers=sh.getRange(1,1,1,sh.getLastColumn()).getDisplayValues()[0];
+ const varianceColumn=headers.indexOf('พลังงานเทียบเป้า')+1;
+ const entryColumn=headers.indexOf('ข้อมูลวันครบถ้วน JSON')+1;
+ if(!varianceColumn||!entryColumn)return;
+ const variance=sh.getRange(2,varianceColumn,last-1,1).getDisplayValues();
+ const entries=sh.getRange(2,entryColumn,last-1,1).getDisplayValues();
+ entries.forEach((cell,i)=>{
+  if(variance[i][0]||!cell[0])return;
+  try{const delta=calorieDelta_(JSON.parse(cell[0]));if(delta)sh.getRange(i+2,varianceColumn).setValue(delta)}catch(_){/* ignore malformed legacy JSON */}
+ });
 }
