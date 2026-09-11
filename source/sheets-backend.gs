@@ -35,7 +35,9 @@ function doPost(e){let id='';try{
 function receipt_(id,ok,error){CacheService.getScriptCache().put('ack:'+id,JSON.stringify({requestId:id,ok:ok,error:error||undefined}),600)}
 function safe_(v){if(v===undefined||v===null)return '';if(typeof v==='string')return /^[=+\-@\t\r]/.test(v)?"'"+v:v;if(typeof v==='number'&&!Number.isFinite(v))throw Error('Invalid number');return v}
 function calorieDelta_(entry){
- const consumed=Number(entry&&entry.calories),target=Number(entry&&entry.nutritionTarget&&entry.nutritionTarget.calories);
+ const rawConsumed=entry&&entry.calories,rawTarget=entry&&entry.nutritionTarget&&entry.nutritionTarget.calories;
+ if(rawConsumed===undefined||rawConsumed===null||rawConsumed===''||rawTarget===undefined||rawTarget===null||rawTarget==='')return '';
+ const consumed=Number(rawConsumed),target=Number(rawTarget);
  if(!Number.isFinite(consumed)||!Number.isFinite(target))return '';
  const delta=Math.round((consumed-target)*10)/10;
  return delta===0?'ตรงเป้า':(delta>0?'เกิน ':'ขาด ')+Math.abs(delta)+' kcal';
