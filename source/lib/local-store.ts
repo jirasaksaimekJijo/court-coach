@@ -4,7 +4,7 @@ export type LocalEnvelope=LocalData&{format:'court-coach';version:1;revision:str
 type Store=Pick<Storage,'getItem'|'setItem'>;
 const object=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v);
 const profileKeys=['weight','height','age','start','adjustment','baselineWeight','bodyFat','baselineDate','planRevision','paceStart','paceWeight'];
-const entryKeys=['weight','bodyFat','sleep','soreness','pain','extra','calories','protein','carbs','fat','cardio','cardioOther','notes','done','lifts','sets','loads','activityComplete','foodComplete','meals','nutritionTarget'];
+const entryKeys=['weight','bodyFat','sleep','soreness','pain','extra','calories','protein','carbs','fat','cardio','cardioOther','cardioCombined','notes','done','lifts','sets','loads','activityComplete','foodComplete','meals','nutritionTarget'];
 function pick(o:Record<string,unknown>,keys:string[]){return Object.fromEntries(keys.filter(k=>Object.hasOwn(o,k)).map(k=>[k,o[k]]));}
 export function parseData(text:string):LocalData{
  if(text.length>5_000_000)throw Error('ไฟล์ใหญ่เกิน 5 MB');
